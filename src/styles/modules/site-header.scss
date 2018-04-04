@@ -1,9 +1,20 @@
 /*================ Site Header ================*/
 .site-logo {
   display: block;
+  text-align: center;
+  margin: 0 auto;
 
   img {
     display: block;
     width: 100%;
   }
+}
+
+.site-nav .grid__item:nth-child(1) {
+	text-align: right;
+	background: green;
+}
+
+.site-nav .grid__item:nth-child(3) {
+	text-align: left;
 }
