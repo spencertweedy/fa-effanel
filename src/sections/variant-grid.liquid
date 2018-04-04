@@ -1,0 +1,53 @@
+{%- assign product = all_products[section.settings.product] -%}
+
+{% if product == empty %}
+  {%- assign section_onboarding = true -%}
+  {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
+{% endif %}
+
+{% for variant in product.variants limit: 6 %}
+  <a href="{{ variant.url }}">
+
+    {% if variant.image != blank %}
+      {{ variant.image.src | img_url: '480x480' | img_tag: product.title }}
+    {% endif %}
+
+    <p>{{ variant.title }}</p>
+  </a>
+{% else %}
+
+  {% for i in (1..6) %}
+    <a href="#">
+      {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+      {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
+
+      <p>
+        {{ 'homepage.onboarding.product_title' | t }}
+      </p>
+    </a>
+  {% endfor %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Variant grid",
+    "settings": [
+      {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      },
+      {
+        "type": "text",
+        "id": "variant_spread_filter",
+        "label": "Filter"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Variant grid",
+        "category": "Product"
+      }
+    ]
+  }
+{% endschema %}
