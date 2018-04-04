@@ -5,6 +5,14 @@
        itemprop="image">
 {% endif %}
 
+{% if section.settings.header_text != blank %}
+  <h1>{{ section.settings.header_text }}</h1>
+{% endif %}
+
+{% if section.settings.body_html != blank %}
+  <div>{{ section.settings.body_html }}</div>
+{% endif %}
+
 {% schema %}
   {
     "name": "Intro",
