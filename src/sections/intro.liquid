@@ -1,0 +1,35 @@
+{% if section.settings.image != blank %}
+  <img src="{{ section.settings.image | img_url: '1500x' }}"
+       srcset="{{ section.settings.image | img_url: '1500x' }} 1x, {{ section.settings.image | img_url: '1500x', scale: 2 }} 2x"
+       alt="{{ section.settings.image.alt | default: 'Featured image' }}"
+       itemprop="image">
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Intro",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "header_text",
+        "label": "Header text"
+      },
+      {
+        "type": "html",
+        "id": "body_html",
+        "label": "Body HTML"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Intro",
+        "category": "Custom Content"
+      }
+    ]
+  }
+{% endschema %}
