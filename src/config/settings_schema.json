@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Slate",
-    "theme_version": "0.11.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https://shopify.github.io/slate/",
-    "theme_support_url": "https://github.com/Shopify/slate"
+    "theme_name": "Effanel",
+    "theme_version": "0.1",
+    "theme_author": "Fjord Audio",
+    "theme_documentation_url": "https://github.com/spencertweedy/fa-effanel",
+    "theme_support_url": "https://github.com/spencertweedy/fa-effanel"
   },
   {
     "name": "Typography",
