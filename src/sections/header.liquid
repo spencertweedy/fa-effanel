@@ -8,8 +8,8 @@
 <div data-section-id="{{ section.id }}" data-section-type="header-section">
   <header role="banner">
 
-    <nav role="navigation" class="site-nav grid">
-      <div class="grid__item medium-up--two-fifths">
+    <nav role="navigation" class="site-nav">
+      <div class="site-nav__linklist">
         {% for link in linklists[section.settings.left_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}
         {% if menus[child_list_handle].links != blank %}
@@ -33,7 +33,7 @@
         {% endif %}
         {% endfor %}
       </div>
-      <div class="grid__item medium-up--one-fifth">
+      <div>
         <div>
         {% if template.name == 'index' %}
           <h1 itemscope itemtype="http://schema.org/Organization">
@@ -58,7 +58,7 @@
         {% endif %}
         </div>
       </div>
-      <div class="grid__item medium-up--two-fifths">
+      <div class="site-nav__linklist">
         {% for link in linklists[section.settings.right_linklist].links %}
         {%- assign child_list_handle = link.title | handleize -%}
         {% if menus[child_list_handle].links != blank %}
