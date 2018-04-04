@@ -1,0 +1,49 @@
+{% if section.settings.header_image != blank %}
+  {{ section.settings.header_image | img_url: '500x' | img_tag }}
+{% endif %}
+{% if section.settings.text != blank %}{{ section.settings.text }}{% endif %}
+
+{% schema %}
+  {
+    "name": "Text container",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background image"
+      },
+      {
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay color",
+        "default": "#000000"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Overlay opacity",
+        "default": 50
+      },
+      {
+        "type": "image_picker",
+        "id": "header_image",
+        "label": "Header image"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Content"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text container",
+        "category": "Custom Content"
+      }
+    ]
+  }
+{% endschema %}
