@@ -1,0 +1,42 @@
+{% for block in section.blocks %}
+  {% if block.settings.feature_header != blank %}{{ block.settings.feature_header }}{% endif %}
+  {% if block.settings.feature_body != blank %}{{ block.settings.feature_body }}{% endif %}
+  {% if block.settings.feature_image != blank %}
+    {{ block.settings.feature_image | img_url: '480x480' | img_tag: block.settings.feature_header }}
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Features list",
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature",
+        "settings": [
+          {
+            "type": "text",
+            "id": "feature_header",
+            "label": "Feature header"
+          },
+          {
+            "type": "textarea",
+            "id": "feature_body",
+            "label": "Feature body"
+          },
+          {
+            "type": "image_picker",
+            "id": "feature_image",
+            "label": "Feature image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Features list",
+        "category": "Custom Content"
+      }
+    ]
+  }
+{% endschema %}
