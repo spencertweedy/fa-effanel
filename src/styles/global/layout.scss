@@ -22,6 +22,8 @@ html {
 
 /*================ Section styles ================*/
 
+/*==== Intro section styles ====*/
+
 .intro-section--container {
 	display: flex;
 
@@ -56,10 +58,55 @@ html {
 	}
 }
 
+/*==== Video section styles ====*/
+
 .video-embed {
 	width: 100%;
 	display: block;
 	object-fit: initial;
 	margin: 0 auto;
 	border-radius: 12px;
+}
+
+/*==== Features list section styles ====*/
+
+.feature--container {
+	display: flex;
+	align-items: center;
+
+	@include media-query($small) {
+		flex-direction: column-reverse;
+	}
+
+	@include media-query($medium-up) {
+			> * {
+			flex-basis: 50%;
+		}
+	}
+}
+
+@include media-query($medium-up) {
+	.feature--container:nth-child(even) {
+		flex-direction: row-reverse;
+	}
+}
+
+.feature--container + .feature--container {
+	margin-top: $gutter;
+}
+
+.feature__text {
+	padding: $gutter ($gutter * 2);
+
+	.feature__text__header {
+		font-weight: $font-weight-bold;
+		font-size: 1.11em;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		margin-bottom: ($gutter / 2);
+	}
+}
+
+.feature__image {
+	text-align: center;
 }

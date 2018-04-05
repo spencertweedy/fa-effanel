@@ -1,10 +1,10 @@
 {% for block in section.blocks %}
-<div class="grid">
-  <div class="grid__item medium-up--one-half">
-    {% if block.settings.feature_header != blank %}{{ block.settings.feature_header }}{% endif %}
+<div class="feature--container">
+  <div class="feature__text">
+    {% if block.settings.feature_header != blank %}<div class="feature__text__header">{{ block.settings.feature_header }}</div>{% endif %}
     {% if block.settings.feature_body != blank %}{{ block.settings.feature_body }}{% endif %}
   </div>
-  <div class="grid__item medium-up--one-half">
+  <div class="feature__image">
     {% if block.settings.feature_image != blank %}
       {{ block.settings.feature_image | img_url: '480x480' | img_tag: block.settings.feature_header }}
     {% endif %}
