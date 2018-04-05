@@ -44,10 +44,14 @@
 
 	.site-nav__linklist {
 		flex-grow: 1;
-		flex-shrink: 1;
+		flex-shrink: 0;
 		display: flex;
 		align-items: center;
 		text-align: center;
+
+		> * {
+			flex-shrink: 0;
+		}
 
 		@include media-query($medium-up) {
 			flex-basis: 50%;
