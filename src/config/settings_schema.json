@@ -33,6 +33,11 @@
             "label": "17px"
           }
         ]
+      },
+      {
+        "type": "text",
+        "id": "typekit_id",
+        "label": "TypeKit ID"
       }
     ]
   },

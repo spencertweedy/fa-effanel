@@ -9,31 +9,7 @@
   <header role="banner">
 
     <nav role="navigation" class="site-nav">
-      <div class="site-nav__linklist">
-        {% for link in linklists[section.settings.left_linklist].links %}
-        {%- assign child_list_handle = link.title | handleize -%}
-        {% if menus[child_list_handle].links != blank %}
-          <div class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
-            <a href="{{ link.url }}" class="site-nav__link">
-              {{ link.title }}
-              {% include 'icon-arrow-down' %}
-            </a>
-            <ul class="site-nav__submenu">
-              {% for childlink in menus[child_list_handle].links %}
-                <li {% if childlink.active %}class="site-nav--active"{% endif %}>
-                  <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        {% else %}
-          <div {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </div>
-        {% endif %}
-        {% endfor %}
-      </div>
-      <div>
+      <div class="site-nav__logo-container">
         <div>
         {% if template.name == 'index' %}
           <h1 itemscope itemtype="http://schema.org/Organization">
@@ -57,6 +33,30 @@
           </div>
         {% endif %}
         </div>
+      </div>
+      <div class="site-nav__linklist">
+        {% for link in linklists[section.settings.left_linklist].links %}
+        {%- assign child_list_handle = link.title | handleize -%}
+        {% if menus[child_list_handle].links != blank %}
+          <div class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
+            <a href="{{ link.url }}" class="site-nav__link">
+              {{ link.title }}
+              {% include 'icon-arrow-down' %}
+            </a>
+            <ul class="site-nav__submenu">
+              {% for childlink in menus[child_list_handle].links %}
+                <li {% if childlink.active %}class="site-nav--active"{% endif %}>
+                  <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <div {% if link.active %}class="site-nav--active"{% endif %}>
+            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+          </div>
+        {% endif %}
+        {% endfor %}
       </div>
       <div class="site-nav__linklist">
         {% for link in linklists[section.settings.right_linklist].links %}
