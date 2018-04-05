@@ -114,7 +114,9 @@ h1 {
 }
 
 .feature__text {
-	padding: 0 ($gutter * 2);
+	@include media-query($medium-up) {
+		padding: 0 ($gutter * 2);
+	}
 
 	.feature__text__header {
 		font-weight: $font-weight-bold;
