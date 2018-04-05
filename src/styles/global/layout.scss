@@ -110,3 +110,25 @@ html {
 .feature__image {
 	text-align: center;
 }
+
+/*==== Text container section styles ====*/
+
+.text-container--container {
+	background-color: $color-primary;
+	border-radius: 12px;
+	padding: ($gutter * 3) $gutter;
+
+	.text-container__inner {
+		width: 50%;
+		margin: 0 auto;
+		max-width: 400px;
+
+		@include media-query($small) {
+			width: 100%;
+		}
+	}
+
+	img {
+		max-width: 60%;
+	}
+}

@@ -1,7 +1,26 @@
-{% if section.settings.header_image != blank %}
-  {{ section.settings.header_image | img_url: '500x' | img_tag }}
-{% endif %}
-{% if section.settings.text != blank %}{{ section.settings.text }}{% endif %}
+<style>
+  {% if section.settings.background_image != blank %}
+  .text-container--container {
+    background: url({{ section.settings.background_image | img_url: '1200x' }});
+    background-size: cover;
+  }
+  {% endif %}
+
+  {% if section.settings.overlay_opacity > 0 %}
+  .text-container--container {
+    background-color: {{ section.settings.overlay_color }};
+  }
+  {% endif %}
+</style>
+<div class="text-container--container">
+  <div class="text-container__inner">
+    {% if section.settings.header_image != blank %}
+      {{ section.settings.header_image | img_url: '400x' | img_tag }}
+    {% endif %}
+    
+    {% if section.settings.text != blank %}{{ section.settings.text }}{% endif %}
+  </div>
+</div>
 
 {% schema %}
   {
