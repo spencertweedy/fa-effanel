@@ -1,6 +1,6 @@
 <div class="intro-section--container">
   {% if section.settings.image != blank %}
-    <div>
+    <div class="intro-section__image">
       <img src="{{ section.settings.image | img_url: '1500x' }}"
          srcset="{{ section.settings.image | img_url: '1500x' }} 1x, {{ section.settings.image | img_url: '1500x', scale: 2 }} 2x"
          alt="{{ section.settings.image.alt | default: 'Featured image' }}"

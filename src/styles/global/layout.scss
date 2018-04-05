@@ -39,8 +39,9 @@ h1 {
 		flex-basis: 50%;
 	}
 
-	> div:first-child {
+	.intro-section__image {
 		padding-right: ($gutter * 3);
+		text-align: center;
 
 		@include media-query($medium-down) {
 			padding: 0;
