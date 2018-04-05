@@ -7,6 +7,10 @@ html {
   color: $color-body-text;
 }
 
+h1 {
+	margin: 0;
+}
+
 .page-width {
   @include clearfix();
   max-width: $width-site;

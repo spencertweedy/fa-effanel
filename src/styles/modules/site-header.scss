@@ -30,6 +30,7 @@
 
 	.site-nav__logo-container {
 		flex-shrink: 0;
+		padding: $gutter 0;
 
 		@include media-query($medium) {
 			flex-basis: 100%;
@@ -37,6 +38,7 @@
 
 		@include media-query($small) {
 			margin: 0 $gutter;
+			padding: ($gutter / 2) 0;
 		}
 	}
 
