@@ -5,14 +5,14 @@
   {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
 {% endif %}
 
-<div class="grid">
+<div class="variant-grid--container grid">
 {% for variant in product.variants %}
   {% if variant.title contains section.settings.variant_spread_filter %}
   <div class="grid__item medium-up--one-third">
       <a href="{{ variant.url }}">
 
       {% if variant.image != blank %}
-        {{ variant.image.src | img_url: '480x480' | img_tag: product.title }}
+        {{ variant.image.src | img_url: '750x' | img_tag: product.title }}
       {% endif %}
 
       <p>{{ variant.title | remove_first: section.settings.variant_spread_filter | remove_first: " / " | prepend: "“" | append: "” &rarr;" }}</p>

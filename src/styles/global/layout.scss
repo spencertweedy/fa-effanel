@@ -58,6 +58,19 @@ html {
 	}
 }
 
+/*==== Variant grid section styles ====*/
+
+.variant-grid--container {
+	text-align: center;
+
+	p {
+		font-size: 0.778em;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: $font-weight-bold;
+	}
+}
+
 /*==== Video section styles ====*/
 
 .video-embed {

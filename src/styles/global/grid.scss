@@ -9,11 +9,13 @@
   margin: 0;
   padding: 0;
   margin-left: -$grid-gutter;
+  margin-top: -$grid-gutter;
 }
 
 .grid__item {
   float: left;
   padding-left: $grid-gutter;
+  padding-top: $grid-gutter;
   width: 100%;
 
   &[class*='--push'] {
