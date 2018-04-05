@@ -11,6 +11,13 @@ h1 {
 	margin: 0;
 }
 
+h2 {
+	text-transform: uppercase;
+	font-size: 1.44em;
+	letter-spacing: 0.11em;
+	margin-bottom: $gutter;
+}
+
 .page-width {
   @include clearfix();
   max-width: $width-site;
@@ -22,6 +29,21 @@ h1 {
 	margin-bottom: ($gutter * 3);
 
 	@extend .page-width;
+}
+
+/*================ Template styles ================*/
+
+/*==== Page template styles ====*/
+
+.page-container {
+	max-width: 540px;
+	margin: -$gutter auto 0;
+	line-height: 1.77em;
+
+	img {
+		border-radius: 12px;
+		max-width: 100%;
+	}
 }
 
 /*================ Section styles ================*/
