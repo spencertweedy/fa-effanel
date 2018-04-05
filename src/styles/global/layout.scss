@@ -37,7 +37,8 @@ h2 {
 
 .page-container {
 	max-width: 540px;
-	margin: -$gutter auto 0;
+	margin: 0 auto;
+	padding: 0 $gutter;
 	line-height: 1.77em;
 
 	img {

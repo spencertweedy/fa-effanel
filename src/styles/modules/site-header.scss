@@ -106,6 +106,10 @@
 		}
 	}
 
+	@include media-query($medium-up) {
+		margin-bottom: -$gutter;
+	}
+
 	@include media-query($medium) {
 		flex-wrap: wrap;
 	}
