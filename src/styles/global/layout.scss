@@ -16,9 +16,11 @@ html {
 
 .shopify-section {
 	margin-bottom: ($gutter * 3);
-	
+
 	@extend .page-width;
 }
+
+/*================ Section styles ================*/
 
 .intro-section--container {
 	display: flex;
@@ -29,6 +31,15 @@ html {
 
 	> div {
 		flex-basis: 50%;
+	}
+
+	> div:first-child {
+		padding-right: $gutter;
+
+		@include media-query($medium-down) {
+			padding: 0;
+			margin-bottom: ($gutter * 2);
+		}
 	}
 
 	.intro-section__header {
@@ -43,4 +54,12 @@ html {
 		font-size: 1.11em;
 		line-height: 2.05em;
 	}
+}
+
+.video-embed {
+	width: 100%;
+	display: block;
+	object-fit: initial;
+	margin: 0 auto;
+	border-radius: 12px;
 }

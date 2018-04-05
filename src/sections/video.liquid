@@ -1,5 +1,5 @@
 {% if section.settings.video_url != blank %}
-  <video controls>
+  <video class="video-embed" controls{% if section.settings.video_poster != blank %} poster="{{ section.settings.video_poster | img_url: '1200x' }}"{% endif %}>
     <source src="{{ section.settings.video_url }}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -14,6 +14,11 @@
         "id": "video_url",
         "label": "Video URL",
         "info": "Must be an MP4."
+      },
+      {
+        "type": "image_picker",
+        "id": "video_poster",
+        "label": "Video poster image"
       }
     ],
     "presets": [
