@@ -16,6 +16,8 @@ html {
 
 .shopify-section {
 	margin-bottom: ($gutter * 3);
+	
+	@extend .page-width;
 }
 
 .intro-section--container {
