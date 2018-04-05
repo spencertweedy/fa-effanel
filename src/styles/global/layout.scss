@@ -68,6 +68,10 @@ h1 {
 .variant-grid--container {
 	text-align: center;
 
+	img {
+		border-radius: 12px;
+	}
+
 	p {
 		font-size: 0.778em;
 		text-transform: uppercase;
@@ -129,6 +133,10 @@ h1 {
 
 .feature__image {
 	text-align: center;
+
+	img {
+		border-radius: 12px;
+	}
 
 	@include media-query($small) {
 		margin-bottom: $gutter;
