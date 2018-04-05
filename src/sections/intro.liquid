@@ -1,4 +1,4 @@
-<div class="intro-container">
+<div class="intro-section--container">
   {% if section.settings.image != blank %}
     <div>
       <img src="{{ section.settings.image | img_url: '1500x' }}"
@@ -10,11 +10,11 @@
 
   <div>
     {% if section.settings.header_text != blank %}
-      <div>{{ section.settings.header_text }}</div>
+      <div class="intro-section__header">{{ section.settings.header_text }}</div>
     {% endif %}
 
     {% if section.settings.body_html != blank %}
-      <div>{{ section.settings.body_html }}</div>
+      <div class="intro-section__body">{{ section.settings.body_html }}</div>
     {% endif %}
   </div>
 </div>

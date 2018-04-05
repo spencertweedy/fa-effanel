@@ -14,7 +14,7 @@
         "type": "select",
         "id": "type_base_size",
         "label": "Base size",
-        "default": "16px",
+        "default": "18px",
         "options": [
           {
             "value": "14px",
@@ -31,6 +31,10 @@
           {
             "value": "17px",
             "label": "17px"
+          },
+          {
+            "value": "18px",
+            "label": "18px"
           }
         ]
       },
@@ -61,6 +65,13 @@
         "label": "Text color",
         "default": "#000",
         "info": "Color used for content and paragraph text"
+      },
+      {
+        "type": "color",
+        "id": "color_header_text",
+        "label": "Header color",
+        "default": "#000",
+        "info": "Color used for header text"
       }
     ]
   },

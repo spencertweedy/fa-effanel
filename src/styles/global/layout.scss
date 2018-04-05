@@ -4,6 +4,7 @@ html {
   background-color: $color-body;
   font-family: $font-stack-body;
   font-size: $font-size-base;
+  color: $color-body-text;
 }
 
 .page-width {
@@ -13,10 +14,31 @@ html {
   margin: 0 auto;
 }
 
-.intro-container {
+.shopify-section {
+	margin-bottom: ($gutter * 3);
+}
+
+.intro-section--container {
 	display: flex;
+
+	@include media-query($medium-down) {
+		display: block;
+	}
 
 	> div {
 		flex-basis: 50%;
+	}
+
+	.intro-section__header {
+		font-size: 4em;
+		letter-spacing: -2.6px;
+		font-weight: $font-weight-extrabold;
+		color: $color-header-text;
+		margin-bottom: ($gutter * 2);
+	}
+
+	.intro-section__body {
+		font-size: 1.11em;
+		line-height: 2.05em;
 	}
 }
