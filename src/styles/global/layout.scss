@@ -96,7 +96,7 @@ html {
 }
 
 .feature__text {
-	padding: $gutter ($gutter * 2);
+	padding: 0 ($gutter * 2);
 
 	.feature__text__header {
 		font-weight: $font-weight-bold;
@@ -109,6 +109,10 @@ html {
 
 .feature__image {
 	text-align: center;
+
+	@include media-query($small) {
+		margin-bottom: $gutter;
+	}
 }
 
 /*==== Text container section styles ====*/
