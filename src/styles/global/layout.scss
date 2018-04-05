@@ -36,7 +36,7 @@ html {
 	}
 
 	> div:first-child {
-		padding-right: $gutter;
+		padding-right: ($gutter * 3);
 
 		@include media-query($medium-down) {
 			padding: 0;
