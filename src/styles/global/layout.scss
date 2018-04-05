@@ -51,15 +51,23 @@ h1 {
 
 	.intro-section__header {
 		font-size: 4em;
-		letter-spacing: -2.6px;
+		letter-spacing: -0.036em;
 		font-weight: $font-weight-extrabold;
 		color: $color-header-text;
 		margin-bottom: ($gutter * 2);
+
+		@include media-query($small) {
+			font-size: 2.44em;
+		}
 	}
 
 	.intro-section__body {
 		font-size: 1.11em;
 		line-height: 2.05em;
+
+		@include media-query($small) {
+			font-size: 1em;
+		}
 	}
 }
 
@@ -75,7 +83,7 @@ h1 {
 	p {
 		font-size: 0.778em;
 		text-transform: uppercase;
-		letter-spacing: 1px;
+		letter-spacing: 0.07em;
 		font-weight: $font-weight-bold;
 	}
 }
@@ -125,7 +133,7 @@ h1 {
 	.feature__text__header {
 		font-weight: $font-weight-bold;
 		font-size: 1.11em;
-		letter-spacing: 2px;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		margin-bottom: ($gutter / 2);
 	}
