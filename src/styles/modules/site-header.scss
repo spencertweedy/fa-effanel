@@ -29,6 +29,8 @@
 	}
 
 	.site-nav__logo-container {
+		flex-shrink: 0;
+
 		@include media-query($medium-down) {
 			flex-basis: 100%;
 		}
@@ -36,6 +38,8 @@
 
 	.site-nav__linklist {
 		flex-grow: 1;
+		flex-basis: 50%;
+		flex-shrink: 1;
 		display: flex;
 		align-items: center;
 		text-align: center;

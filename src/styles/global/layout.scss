@@ -12,3 +12,11 @@ html {
   padding: 0 $gutter;
   margin: 0 auto;
 }
+
+.intro-container {
+	display: flex;
+
+	> div {
+		flex-basis: 50%;
+	}
+}

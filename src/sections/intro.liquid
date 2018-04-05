@@ -1,6 +1,6 @@
-<div class="grid">
+<div class="intro-container">
   {% if section.settings.image != blank %}
-    <div class="grid__item medium-up--one-half">
+    <div>
       <img src="{{ section.settings.image | img_url: '1500x' }}"
          srcset="{{ section.settings.image | img_url: '1500x' }} 1x, {{ section.settings.image | img_url: '1500x', scale: 2 }} 2x"
          alt="{{ section.settings.image.alt | default: 'Featured image' }}"
@@ -8,9 +8,9 @@
     </div>
   {% endif %}
 
-  <div class="grid__item medium-up--one-half">
+  <div>
     {% if section.settings.header_text != blank %}
-      <h1>{{ section.settings.header_text }}</h1>
+      <div>{{ section.settings.header_text }}</div>
     {% endif %}
 
     {% if section.settings.body_html != blank %}
