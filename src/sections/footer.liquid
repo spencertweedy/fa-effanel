@@ -1,14 +1,19 @@
 <footer>
+  {% if section.settings.footer_logo_offset != blank %}
+  <style>
+    .footer--content {
+      padding-top: {{ section.settings.footer_logo_offset }}px;
+    }
+
+    .footer__item--logo-container {
+      margin-top: -{{ section.settings.footer_logo_offset }}px;
+    }
+
+    /* these styles get reset for medium-down in layout.scss */
+  </style>
+  {% endif %}
   <div class="footer--content">
     {% if section.settings.footer_logo != blank %}
-    {% if section.settings.footer_logo_offset != blank %}
-    <style>
-      .footer__item--logo-container {
-        top: -{{ section.settings.footer_logo_offset }}px;
-        /* position:relative; is set only for large-up breakpoint in layout.scss */
-      }
-    </style>
-    {% endif %}
     <div class="footer__item footer__item--logo-container">{{ section.settings.footer_logo | img_url: '480x480' | img_tag: shop.name }}</div>
     {% endif %}
 

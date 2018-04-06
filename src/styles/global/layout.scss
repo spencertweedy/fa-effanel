@@ -31,10 +31,6 @@ h2 {
 	@extend .page-width;
 }
 
-.shopify-section:last-of-type {
-	margin-bottom: ($gutter * 6);
-}
-
 /*================ Template styles ================*/
 
 /*==== Page template styles ====*/
@@ -206,12 +202,17 @@ h2 {
 
 /*==== Footer section styles ====*/
 
+footer {
+	margin-bottom: ($gutter * 3);
+}
+
 .footer--content {
 	display: flex;
 	justify-content: center;
 
 	@include media-query($medium-down) {
 		flex-wrap: wrap; /* So that the logo container can have its own row */
+		padding-top: 0 !important; /* to reset the offset style in footer.liquid */
 	}
 
 	.footer__item {
@@ -247,17 +248,16 @@ h2 {
 
 	.footer__item--logo-container {
 		text-align: center;
-		margin: 0 ($gutter * 2) $gutter;
+		margin-left: ($gutter * 2);
+		margin-right: ($gutter * 2);
+		margin-bottom: $gutter; /* margins declared separately for offset style in footer.liquid to work */
 		flex-basis: auto;
 		flex-grow: 0;
 		flex-shrink: 0;
 
-		@include media-query($large-up) {
-			position: relative;
-		}
-
 		@include media-query($medium-down) {
 			flex-basis: 100%;
+			margin-top: 0; /* to reset the offset style in footer.liquid */
 		}
 
 		@include media-query($small) {
