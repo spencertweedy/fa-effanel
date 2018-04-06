@@ -206,7 +206,7 @@ h2 {
 
 /*==== Footer section styles ====*/
 
-footer {
+.footer--content {
 	display: flex;
 	justify-content: center;
 
@@ -300,4 +300,11 @@ footer {
 			padding: 0 $gutter;
 		}
 	}
+}
+
+.footer__bottom {
+	text-align: center;
+	font-size: 0.77em;
+	line-height: 1.7em;
+	margin-top: $gutter;
 }
