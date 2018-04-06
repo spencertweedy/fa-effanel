@@ -31,6 +31,10 @@ h2 {
 	@extend .page-width;
 }
 
+.shopify-section:last-of-type {
+	margin-bottom: ($gutter * 6);
+}
+
 /*================ Template styles ================*/
 
 /*==== Page template styles ====*/
@@ -46,6 +50,10 @@ h2 {
 		max-width: 100%;
 	}
 }
+
+/*==== Cart template styles ====*/
+
+
 
 /*================ Section styles ================*/
 
@@ -193,5 +201,103 @@ h2 {
 
 	img {
 		max-width: 60%;
+	}
+}
+
+/*==== Footer section styles ====*/
+
+footer {
+	display: flex;
+	justify-content: center;
+
+	@include media-query($medium-down) {
+		flex-wrap: wrap; /* So that the logo container can have its own row */
+	}
+
+	.footer__item {
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: 50%;
+		font-size: 0.833em;
+		line-height: 1.733em;
+
+		@include media-query($small) {
+			flex-basis: 100%;
+			text-align: center;
+		}
+
+		.footer__item__header {
+			font-size: 0.77rem;
+			letter-spacing: 0.13em;
+			text-transform: uppercase;
+			font-weight: $font-weight-bold;
+			margin-bottom: ($gutter / 2);
+
+			@include media-query($small) {
+				margin-top: $gutter;
+			}
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.footer__item--logo-container {
+		text-align: center;
+		margin: 0 ($gutter * 2) $gutter;
+		flex-basis: auto;
+		flex-grow: 0;
+		flex-shrink: 0;
+
+		@include media-query($large-up) {
+			position: relative;
+		}
+
+		@include media-query($medium-down) {
+			flex-basis: 100%;
+		}
+
+		@include media-query($small) {
+			margin-bottom: 0;
+		}
+	}
+
+	.footer__item--links-container {
+		display: flex;
+		justify-content: flex-end;
+		order: -1;
+
+		@include media-query($medium-down) {
+			order: 0;
+			padding: 0 $gutter;
+		}
+
+		@include media-query($small) {
+			padding: 0;
+			display: block;
+		}
+
+		@include media-query($medium-up) {
+
+		}
+
+		> div:nth-child(2) {
+			@include media-query($medium-up) {
+				margin-left: ($gutter * 2);	
+			}
+
+			li:after {
+				content: '↗';
+			}
+		}
+	}
+
+	.footer__item--newsletter-container {
+		@include media-query($medium) {
+			padding: 0 $gutter;
+		}
 	}
 }

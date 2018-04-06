@@ -1,46 +1,60 @@
 <footer>
 
   {% if section.settings.footer_logo != blank %}
-    {{ section.settings.footer_logo | img_url: '480x480' | img_tag: shop.name }}
+  {% if section.settings.footer_logo_offset != blank %}
+  <style>
+    .footer__item--logo-container {
+      top: -{{ section.settings.footer_logo_offset }}px;
+      /* position:relative; is set only for large-up breakpoint in layout.scss */
+    }
+  </style>
+  {% endif %}
+  <div class="footer__item footer__item--logo-container">{{ section.settings.footer_logo | img_url: '480x480' | img_tag: shop.name }}</div>
   {% endif %}
 
+  <div class="footer__item footer__item--links-container">
   {%- assign footer_linklist = section.settings.footer_linklist -%}
   {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
+    <div>
+      <div class="footer__item__header">Pages</div>
+      <ul>
+        {% for link in linklists[footer_linklist].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
   {% endif %}
-
   {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+    <div>
+      <div class="footer__item__header">Follow {{ shop.name }}</div>
+      <ul>
+        {% for social in social_accounts %}
+          {%- assign social_handle = social | handleize -%}
+          {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+          {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
 
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
-      {% endif %}
+          {% if settings[social_link] != blank %}
+            <li>
+              <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
+                {{ social }}
+              </a>
+            </li>
+          {% endif %}
 
-    {% endfor %}
-  </ul>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 
   {% if section.settings.mailchimp_url != blank %}
-  <div>
-    {{ section.settings.mailchimp_header }}
+  <div class="footer__item footer__item--newsletter-container">
+    <div class="footer__item__header">Newsletter</div>
     {{ section.settings.mailchimp_url }}
     {{ section.settings.mailchimp_note }}
   </div>
   {% endif %}
 
-  <div>
+  <div style="display:none;">
     {% if section.settings.show_email %}
       {{ shop.email }}
       {% if section.settings.show_phone or section.settings.show_address %}
@@ -71,15 +85,15 @@
         "label": "Footer logo"
       },
       {
+        "type": "text",
+        "id": "footer_logo_offset",
+        "label": "Footer logo offset (px)"
+      },
+      {
         "type": "link_list",
         "id": "footer_linklist",
         "label": "Pages menu",
         "default": "footer"
-      },
-      {
-        "type": "text",
-        "id": "mailchimp_header",
-        "label": "MailChimp header"
       },
       {
         "type": "text",
