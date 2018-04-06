@@ -122,8 +122,23 @@
 		background: $color-body;
 		box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* replace color */
 		width: 100%;
-		z-index: 99999;
+		z-index: 99998;
 		overflow: scroll;
 		justify-content: flex-start;
+	}
+}
+
+.site-nav:after {
+	@include media-query($small) {
+		content: '';
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 30px;
+		height: 100%;
+		z-index: 99999;
+		pointer-events: none;
+		background: transparent;
+		background: linear-gradient(to right, rgba($color-body,0) 0%,$color-body 100%);
 	}
 }
