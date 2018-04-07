@@ -58,6 +58,10 @@ h2 {
 .intro-section--container {
 	display: flex;
 
+	@include media-query($medium-up) {
+		padding: 0 $gutter;
+	}
+
 	@include media-query($medium-down) {
 		display: block;
 	}
