@@ -188,6 +188,8 @@ h2 {
 	background-color: $color-primary;
 	border-radius: 12px;
 	padding: ($gutter * 3) $gutter;
+	line-height: 1.7em;
+	/* color is defined in section template */
 
 	.text-container__inner {
 		width: 50%;

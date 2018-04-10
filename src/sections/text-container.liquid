@@ -1,14 +1,12 @@
 <style>
+  .text-container--container {
+    color: {{ section.settings.text_color }};
+  }
+
   {% if section.settings.background_image != blank %}
   .text-container--container {
     background: url({{ section.settings.background_image | img_url: '1200x' }});
     background-size: cover;
-  }
-  {% endif %}
-
-  {% if section.settings.overlay_opacity > 0 %}
-  .text-container--container {
-    background-color: {{ section.settings.overlay_color }};
   }
   {% endif %}
 </style>
@@ -32,12 +30,6 @@
         "label": "Background image"
       },
       {
-        "type": "color",
-        "id": "overlay_color",
-        "label": "Overlay color",
-        "default": "#000000"
-      },
-      {
         "type": "range",
         "id": "overlay_opacity",
         "min": 0,
@@ -46,6 +38,18 @@
         "unit": "%",
         "label": "Overlay opacity",
         "default": 50
+      },
+      {
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#ffffff"
       },
       {
         "type": "image_picker",
