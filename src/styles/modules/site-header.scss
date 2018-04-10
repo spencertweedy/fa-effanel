@@ -12,13 +12,19 @@
 }
 
 .site-nav {
-	font-size: 0.778em;
+	font-size: 0.888em;
 	letter-spacing: 0.07em;
 	text-transform: uppercase;
+	font-weight: 500;
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	a {
+		text-decoration: none;
+		color: $color-body-text;
+	}
 
 	> * {
 		margin: 0 $gutter;
@@ -75,7 +81,7 @@
 		}
 
 		> * {
-			margin-left: $gutter;
+			margin-left: ($gutter * 2);
 
 			@include media-query($medium) {
 				margin: 0 ($gutter / 2);
@@ -94,7 +100,7 @@
 		}
 		
 		> * {
-			margin-right: $gutter;
+			margin-right: ($gutter * 2);
 
 			@include media-query($medium) {
 				margin: 0 ($gutter / 2);
