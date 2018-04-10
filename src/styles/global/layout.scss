@@ -13,7 +13,7 @@ h1 {
 
 h2 {
 	text-transform: uppercase;
-	font-size: 1.44em;
+	font-size: 1.625em;
 	letter-spacing: 0.11em;
 	margin-bottom: $gutter;
 }
@@ -36,10 +36,10 @@ h2 {
 /*==== Page template styles ====*/
 
 .page-container {
-	max-width: 540px;
-	margin: 0 auto;
+	max-width: (540px + ($gutter * 2));
+	margin: 0 auto ($gutter * 2);
 	padding: 0 $gutter;
-	line-height: 1.77em;
+	line-height: 2em;
 
 	img {
 		border-radius: 12px;
@@ -81,20 +81,20 @@ h2 {
 	}
 
 	.intro-section__header {
-		font-size: 4.44em;
+		font-size: 5em;
 		letter-spacing: -0.036em;
 		font-weight: $font-weight-extrabold;
 		color: $color-header-text;
 		margin-bottom: ($gutter * 2);
 
 		@include media-query($small) {
-			font-size: 3.33em;
+			font-size: 3.75em;
 		}
 	}
 
 	.intro-section__body {
-		font-size: 1.11em;
-		line-height: 2.33em;
+		font-size: 1.125em;
+		line-height: 2.625em;
 
 		@include media-query($small) {
 			font-size: 1em;
@@ -117,7 +117,6 @@ h2 {
 	}
 
 	p {
-		font-size: 0.833em;
 		text-transform: uppercase;
 		letter-spacing: 0.07em;
 		font-weight: $font-weight-bold;
@@ -168,14 +167,13 @@ h2 {
 
 	.feature__text__header {
 		font-weight: $font-weight-bold;
-		font-size: 1.11em;
+		font-size: 1.25em;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		margin-bottom: ($gutter / 2);
 	}
 
 	.feature__text__body {
-		font-size: 0.888em;
 		line-height: 1.875em;
 	}
 }
@@ -235,8 +233,8 @@ footer {
 		flex-grow: 1;
 		flex-shrink: 1;
 		flex-basis: 50%;
-		font-size: 0.833em;
-		line-height: 1.733em;
+		font-size: 0.875em;
+		line-height: 1.75em;
 
 		@include media-query($small) {
 			flex-basis: 100%;
@@ -244,7 +242,7 @@ footer {
 		}
 
 		.footer__item__header {
-			font-size: 0.77rem;
+			font-size: 0.875rem;
 			letter-spacing: 0.13em;
 			text-transform: uppercase;
 			font-weight: $font-weight-bold;
@@ -320,7 +318,7 @@ footer {
 
 .footer__bottom {
 	text-align: center;
-	font-size: 0.77em;
-	line-height: 1.7em;
+	font-size: 0.8125em;
+	line-height: 1.85em;
 	margin-top: $gutter;
 }
