@@ -30,8 +30,8 @@
       </div>
     {% endif %}
     {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-      <div>
-        <div class="footer__item__header">Follow {{ shop.name }}</div>
+      <div class="footer__item__social-links">
+        {% if section.settings.social_header != blank %}<div class="footer__item__header">{{ section.settings.social_header }}</div>{% endif %}
         <ul>
           {% for social in social_accounts %}
             {%- assign social_handle = social | handleize -%}
@@ -40,9 +40,7 @@
 
             {% if settings[social_link] != blank %}
               <li>
-                <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-                  {{ social }}
-                </a>
+                <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">{{ social }}</a>
               </li>
             {% endif %}
 
@@ -100,6 +98,12 @@
         "id": "footer_linklist",
         "label": "Pages menu",
         "default": "footer"
+      },
+      {
+        "type": "text",
+        "id": "social_header",
+        "label": "Social links header",
+        "default": "Follow Us"
       },
       {
         "type": "text",
