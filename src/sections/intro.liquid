@@ -1,3 +1,26 @@
+<style>
+{% if section.settings.header_noise %}
+  .intro-section__header {
+    position: relative;
+    color: transparent !important;
+    background: url({{ 'noise.png' | asset_url }}) repeat;
+    -webkit-background-clip: text;
+    cursor: text;
+  }
+
+  .intro-section__header:after {
+    content: '{{ section.settings.header_text | replace: '<br>', '\A ' }}';
+    white-space: pre-wrap;
+    color: rgba(0,0,0,0.875);
+    position: absolute;
+    top: 0.01em;
+    left: 0.02em;
+    font-size: 0.99em;
+    letter-spacing: -0.035em;
+    line-height: 1.15em;
+  }
+{% endif %}
+</style>
 <div class="intro-section--container">
   {% if section.settings.image != blank %}
     <div class="intro-section__image">
@@ -32,6 +55,12 @@
         "type": "html",
         "id": "header_text",
         "label": "Header text"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_noise",
+        "label": "Header text noise",
+        "default": false
       },
       {
         "type": "html",
