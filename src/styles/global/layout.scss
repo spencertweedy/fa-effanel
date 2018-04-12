@@ -86,6 +86,7 @@ h2 {
 		font-weight: $font-weight-extrabold;
 		color: $color-header-text;
 		margin-bottom: ($gutter * 2);
+		line-height: 0.9em;
 
 		@include media-query($small) {
 			font-size: 3.75em;
@@ -94,10 +95,24 @@ h2 {
 
 	.intro-section__body {
 		font-size: 1.125em;
-		line-height: 2.625em;
+		line-height: 2.27em;
 
-		@include media-query($small) {
+		p {
+			margin-bottom: 1.5em;
+		}
+
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+
+		strong {
+			text-transform: uppercase;
+			letter-spacing: 0.1125em;
+		}
+
+		@include media-query($medium-down) {
 			font-size: 1em;
+			line-height: 1.75em;
 		}
 	}
 }
