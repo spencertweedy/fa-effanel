@@ -112,6 +112,11 @@
 		}
 	}
 
+	.icon-cart {
+		position: relative;
+		top: -5px;
+	}
+
 	@include media-query($medium-up) {
 		margin-bottom: -$gutter;
 	}
