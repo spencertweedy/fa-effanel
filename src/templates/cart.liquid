@@ -1,9 +1,10 @@
+<div class="cart-container">
 {% if cart.item_count > 0 %}
   <h2>{{ 'cart.general.title' | t }}</h2>
 
   <form action="/cart" method="post" novalidate>
     <table class="responsive-table">
-      <thead class="small--hide">
+      <thead>
         <tr>
           <th colspan="2">{{ 'cart.label.product' | t }}</th>
           <th>{{ 'cart.label.price' | t }}</th>
@@ -35,13 +36,13 @@
 
             </td>
             <td>
-              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              <a class="cart__product-title" href="{{ item.url }}">{{ item.product.title }}</a>
 
               {% unless item.product.has_only_default_variant %}
-                <p>{{ item.variant.title }}</p>
+                <div class="cart__variant-title">{{ item.variant.title }}</div>
               {% endunless %}
 
-              <p>{{ item.vendor }}</p>
+              {% if settings.cart_show_vendors %}<p>{{ item.vendor }}</p>{% endif %}
 
               {%- assign property_size = item.properties | size -%}
 
@@ -82,7 +83,7 @@
                      min="0"
                      aria-label="{{ 'cart.general.item_quantity' | t }}">
             </td>
-            <td data-label="{{ 'cart.label.total' | t }}">
+            <td class="cart__total-price" data-label="{{ 'cart.label.total' | t }}">
               {{ item.line_price | money }}
             </td>
           </tr>
@@ -91,22 +92,28 @@
       </tbody>
     </table>
 
-    {% if settings.cart_notes_enable %}
-      <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-      <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-    {% endif %}
+    <div class="cart__checkout-section">
+      <div class="cart__checkout-section__item">
+        <div>{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</div>
+        {% if cart.total_discounts > 0 %}
+          <div>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</div>
+        {% endif %}
+        <div>{{ 'cart.general.shipping_at_checkout' | t }}</div>
 
-    <p>{{ 'cart.general.subtotal' | t }}</p>
-    <p>{{ cart.total_price | money }}</p>
-    {% if cart.total_discounts > 0 %}
-      <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
-    {% endif %}
-    <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
-    <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-    <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+        {% if settings.cart_notes_enable %}
+          <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+          <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+        {% endif %}
+      </div>
+
+      <div class="cart__checkout-section__item">
+        <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
+        <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+      </div>
+    </div>
   </form>
 {% else %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
+  <h2>{{ 'cart.general.title' | t }}</h2>
 
   {% comment %}
   Cart empty state
@@ -126,3 +133,4 @@
     <p>{{ 'cart.general.cookies_required' | t }}</p>
   </div>
 {% endif %}
+</div>
