@@ -93,8 +93,8 @@
     </table>
 
     <div class="cart__checkout-section">
-      <div class="cart__checkout-section__item">
-        <div>{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</div>
+      <div class="cart__checkout-section__checkout-info">
+        <div class="cart__checkout-section__subtotal">{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</div>
         {% if cart.total_discounts > 0 %}
           <div>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</div>
         {% endif %}
@@ -106,7 +106,7 @@
         {% endif %}
       </div>
 
-      <div class="cart__checkout-section__item">
+      <div class="cart__checkout-section__checkout-buttons">
         <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
         <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
       </div>

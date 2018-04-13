@@ -114,8 +114,27 @@ a {
 			text-align: center;
 		}
 
-		.cart__checkout-section-item {
+		.cart__checkout-section__checkout-info {
+			font-size: 0.875em;
+			margin-right: ($gutter * 2);
 
+			> div {
+				margin-bottom: 1em;
+			}
+
+			.cart__checkout-section__subtotal {
+				font-size: 1.0625em;
+			}
+
+			textarea[name="note"] {
+				display: block;
+				border: 2px solid $color-body-text;
+				outline: none;
+				border-radius: 12px;
+				padding: 0.5em;
+				font-family: inherit;
+				margin: 0.5em 0 0;
+			}
 		}
 
 		input[name="update"] {
