@@ -201,6 +201,7 @@ a {
 
 		@include media-query($small) {
 			font-size: 3.75em;
+			margin-bottom: $gutter;
 		}
 	}
 
@@ -300,7 +301,7 @@ a {
 	}
 
 	.feature__text__body {
-		line-height: 1.875em;
+		line-height: 1.75em;
 	}
 }
 
@@ -322,7 +323,7 @@ a {
 	background-color: $color-primary;
 	border-radius: 12px;
 	padding: ($gutter * 3) $gutter;
-	line-height: 1.7em;
+	line-height: 1.75em;
 	/* color is defined in section template */
 
 	.text-container__inner {
