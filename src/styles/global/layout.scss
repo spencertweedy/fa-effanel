@@ -35,6 +35,11 @@ a {
 	@extend .page-width;
 }
 
+::selection {
+	background: $color-primary;
+	color: $color-body;
+}
+
 /*================ Template styles ================*/
 
 /*==== Page template styles ====*/
