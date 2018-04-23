@@ -255,12 +255,20 @@ a {
 	}
 }
 
-/*==== Video section styles ====*/
+/*==== Embed section styles ====*/
 
-.video-embed {
-	width: 100%;
+.embed-container {
+	iframe,
+	object,
+	video,
+	embed {
+		border-radius: 12px;   
+	}
+}
+
+.embed-container > * {
+	max-width: 100%;
 	display: block;
-	object-fit: initial;
 	margin: 0 auto;
 	border-radius: 12px;
 }

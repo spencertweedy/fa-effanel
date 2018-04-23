@@ -1,0 +1,24 @@
+{% if section.settings.embed_code != blank %}
+  <div class="embed-container">
+    {{ section.settings.embed_code }}
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Video",
+    "settings": [
+      {
+        "type": "html",
+        "id": "embed_code",
+        "label": "Embed code"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Embed",
+        "category": "Custom Content"
+      }
+    ]
+  }
+{% endschema %}
