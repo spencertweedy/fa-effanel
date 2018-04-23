@@ -51,4 +51,17 @@ $(document).ready(function() {
   if (slate.cart.cookiesEnabled()) {
     document.documentElement.className = document.documentElement.className.replace('supports-no-cookies', 'supports-cookies');
   }
+
+  // Let header nav "menu" link show/hide the nav links
+  $(".site-nav__toggle-link").click(function(event){
+      event.preventDefault();
+      $(".site-nav").toggleClass("opened");
+      var el = $(this);
+        if (el.text() == el.data("text-swap")) {
+        el.text(el.data("text-original"));
+      } else {
+        el.data("text-original", el.text());
+        el.text(el.data("text-swap"));
+      }
+  });
 });
