@@ -258,19 +258,15 @@ a {
 /*==== Embed section styles ====*/
 
 .embed-container {
+	border-radius: 12px;
+	overflow: hidden;
+
 	iframe,
 	object,
 	video,
 	embed {
 		border-radius: 12px;   
 	}
-}
-
-.embed-container > * {
-	max-width: 100%;
-	display: block;
-	margin: 0 auto;
-	border-radius: 12px;
 }
 
 /*==== Features list section styles ====*/
