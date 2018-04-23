@@ -373,7 +373,7 @@ footer {
 			letter-spacing: 0.13em;
 			text-transform: uppercase;
 			font-weight: $font-weight-bold;
-			margin-bottom: ($gutter / 2);
+			margin-bottom: ($gutter / 4);
 
 			@include media-query($small) {
 				margin-top: $gutter;
@@ -437,7 +437,7 @@ footer {
 		}
 
 		li:after {
-			content: '↗';
+			content: '\2197 \FE0E';
 		}
 	}
 
