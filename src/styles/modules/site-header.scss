@@ -166,12 +166,13 @@
 	.cart-link {
 		position: relative;
 		padding-right: 24px;
+		display: inline-block;
 	}
 
 	.icon-cart {
 		position: absolute;
-		top: -2px;
-		margin-left: 5px;
+		top: -3px;
+		right: 0;
 	}
 
 	@include media-query($medium-up) {
