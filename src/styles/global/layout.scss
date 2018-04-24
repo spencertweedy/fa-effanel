@@ -59,7 +59,8 @@ a {
 /*==== Cart template styles ====*/
 
 .cart-container {
-	margin: 0 auto ($gutter * 2);
+	margin: 0 auto ($gutter * 4);
+	padding: 0 $gutter;
 
 	h2 {
 		text-align: center;
@@ -123,6 +124,11 @@ a {
 			font-size: 0.875em;
 			margin-right: ($gutter * 2);
 
+			@include media-query($small) {
+				margin-right: 0;
+				margin-bottom: $gutter;
+			}
+
 			> div {
 				margin-bottom: 1em;
 			}
@@ -164,6 +170,10 @@ a {
 			border: none;
 			outline: none;
 		}
+	}
+
+	.supports-cookies, .supports-no-cookies {
+		text-align: center;
 	}
 }
 
