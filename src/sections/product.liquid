@@ -14,6 +14,10 @@
       <img src="{{ featured_image | img_url: '640x640' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
     {% endif %}
 
+    <div class="rte product__description">
+      {{ product.description }}
+    </div>
+
     {% if product.images.size > 0 %}
         {% for image in product.images %}
           <img src="{{ image.src | img_url: '640x640' }}" alt="{{ image.alt | escape }}">
@@ -98,10 +102,6 @@
         </button>
       </form>
 
-    </div>
-
-    <div class="rte">
-      {{ product.description }}
     </div>
   </div>
 

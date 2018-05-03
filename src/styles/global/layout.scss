@@ -380,6 +380,8 @@ a {
 
 	.product__price--wrapper {
 		text-align: center;
+		margin-bottom: ($gutter / 2);
+		font-size: 1.25em;
 	}
 
 	.product__photos-column {
@@ -392,6 +394,10 @@ a {
 
 		img:last-of-type {
 			margin-bottom: 0;
+		}
+
+		.product__description {
+			line-height: 1.75em;
 		}
 	}
 
@@ -409,6 +415,11 @@ a {
 		margin: ($gutter / 2) 0 $gutter;
 		border-radius: 12px;
 
+		label {
+			margin-bottom: 0.25em;
+			display: block;
+		}
+
 		select {
 			width: 100%;
 			border: 4px solid #ddd; /* REPLACE WITH VARIABLE COLOR */
@@ -416,6 +427,33 @@ a {
 			padding: ($gutter / 2);
 			border-radius: 4px;
 			font-family: inherit;
+			margin-bottom: ($gutter / 2);
+		}
+
+		input[type="number"] {
+			display: block;
+			width: 100%;
+			border: 4px solid #ddd; /* REPLACE WITH VARIABLE COLOR */
+			outline: none;
+			padding: ($gutter / 2);
+			border-radius: 4px;
+			font-family: inherit;
+			margin-bottom: ($gutter / 2);
+		}
+
+		button[name="add"] {
+			display: block;
+			width: 100%;
+			padding: ($gutter / 2);
+			background: $color-primary;
+			outline: none;
+			border: none;
+			text-transform: uppercase;
+			letter-spacing: 0.125em;
+			font-size: 0.9em;
+			font-weight: $font-weight-bold;
+			color: $color-header-text-lightened;
+			border-radius: 4px;
 		}
 	}
 }
