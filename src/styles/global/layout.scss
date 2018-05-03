@@ -243,6 +243,20 @@ a {
 	}
 }
 
+/*==== 404 template styles ====*/
+
+.fourohfour-container {
+	@extend .shopify-section;
+
+	h2 {
+		text-align: center;
+	}
+
+	p {
+		text-align: center;
+	}
+}
+
 /*================ Section styles ================*/
 
 /*==== Intro section styles ====*/
