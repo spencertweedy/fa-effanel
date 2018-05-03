@@ -378,6 +378,7 @@ a {
 			img {
 				border-radius: 12px;
 				margin-bottom: $gutter;
+				border: 2px dashed $color-header-text-sortalightened;
 			}
 		}
 
@@ -389,15 +390,12 @@ a {
 			}
 
 			h2 {
-				background-color: $color-body;
-				padding: 0.5em;
-				display: inline-block;
 				margin-bottom: 0;
 			}
 
 			.product__product-title--container {
 				text-align: center;
-				margin-top: -($gutter * 2);
+				margin-bottom: ($gutter / 2);
 			}
 
 			.product__price--wrapper {
@@ -407,10 +405,7 @@ a {
 			}
 
 			.product__offers {
-				border: 4px solid $color-header-text;
-				padding: $gutter;
 				margin: ($gutter / 2) 0 ($gutter * 2);
-				border-radius: 12px;
 
 				label {
 					margin-bottom: 0.25em;
@@ -419,7 +414,7 @@ a {
 
 				select {
 					width: 100%;
-					border: 4px solid #ddd; /* REPLACE WITH VARIABLE COLOR */
+					border: 2px solid $color-header-text-sortalightened;
 					outline: none;
 					padding: ($gutter / 2);
 					border-radius: 4px;
@@ -430,7 +425,7 @@ a {
 				input[type="number"] {
 					display: block;
 					width: 100%;
-					border: 4px solid #ddd; /* REPLACE WITH VARIABLE COLOR */
+					border: 2px solid $color-header-text-sortalightened;
 					outline: none;
 					padding: ($gutter / 2);
 					border-radius: 4px;
