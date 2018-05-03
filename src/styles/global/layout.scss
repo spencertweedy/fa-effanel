@@ -92,6 +92,36 @@ a {
 	}
 }
 
+/*==== Collection list template styles ====*/
+
+.list-collections-container {
+	@extend .shopify-section;
+
+	h2 {
+		text-align: center;
+	}
+
+	.list-collections__item {
+		text-align: center;
+
+		img {
+			border-radius: 12px;
+		}
+
+		a {
+			text-decoration: none;
+			color: $color-body-text;
+		}
+
+		p {
+			text-transform: uppercase;
+			letter-spacing: 0.07em;
+			font-weight: $font-weight-bold;
+			text-align: center;
+		}
+	}
+}
+
 /*==== Cart template styles ====*/
 
 .cart-container {
