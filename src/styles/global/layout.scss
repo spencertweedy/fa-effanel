@@ -36,6 +36,10 @@ a {
 	@extend .page-width;
 }
 
+.submit-button {
+	font-weight: $font-weight-bold;
+}
+
 ::selection {
 	background: $color-primary;
 	color: $color-body;
