@@ -19,7 +19,9 @@ theme.Product = (function() {
     productJson: '[data-product-json]',
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
-    singleOptionSelector: '[data-single-option-selector]'
+    singleOptionSelector: '[data-single-option-selector]',
+    buyLaterText: '[data-buy-later-text]',
+    buyOnRestockText: '[data-buy-on-restock-text]'
   };
 
   /**
@@ -54,6 +56,7 @@ theme.Product = (function() {
 
     this.$container.on('variantChange' + this.namespace, this.updateAddToCartState.bind(this));
     this.$container.on('variantPriceChange' + this.namespace, this.updateProductPrices.bind(this));
+    this.$container.on('variantChange' + this.namespace, this.updateNotifyForm.bind(this)); // An FA-Effanel addition
 
     if (this.$featuredImage.length > 0) {
       this.settings.imageSize = slate.Image.imageSize(this.$featuredImage.attr('src'));
@@ -61,6 +64,11 @@ theme.Product = (function() {
 
       this.$container.on('variantImageChange' + this.namespace, this.updateProductImage.bind(this));
     }
+
+    $('.notify-me-wrapper a').click(function() {
+      $('#notify-me-form').removeClass('hide').fadeIn();
+      return false;
+    } );
   }
 
   Product.prototype = $.extend({}, Product.prototype, {
@@ -112,6 +120,26 @@ theme.Product = (function() {
       } else {
         $comparePrice.html('');
         $compareEls.addClass('hide');
+      }
+    },
+
+    /**
+     * Updates the DOM with the appropriate notify form
+     *
+     * An FA-Effanel addition
+     */
+    updateNotifyForm: function(evt) {
+      var variant = evt.variant;
+      var notifyMeWrapper = $('.notify-me-wrapper');
+
+      $('#notify-me-form').addClass('hide');
+
+      if (variant.available) {
+        $(selectors.buyLaterText).removeClass('hide');
+        $(selectors.buyOnRestockText).addClass('hide');
+      } else {
+        $(selectors.buyOnRestockText).removeClass('hide');
+        $(selectors.buyLaterText).addClass('hide');
       }
     },
 
