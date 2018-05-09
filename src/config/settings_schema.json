@@ -14,7 +14,7 @@
         "type": "select",
         "id": "type_base_size",
         "label": "Base size",
-        "default": "18px",
+        "default": "16px",
         "options": [
           {
             "value": "14px",

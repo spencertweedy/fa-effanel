@@ -83,7 +83,7 @@
 
   <div class="footer__bottom">
     {% if section.settings.show_email %}
-      {{ shop.email }}
+      <a href="mailto:{{ shop.email }}">{{ shop.email }}</a>
       {% if section.settings.show_phone or section.settings.show_address %}
         &bull; 
       {% endif %}
