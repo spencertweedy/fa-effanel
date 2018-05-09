@@ -1,11 +1,13 @@
 /*================ Site Header ================*/
 .template-index {
-	.site-nav {
-		animation-name: fadeIn;
-		animation-duration: 1s;
-		animation-delay: 2s;
-		animation-iteration-count: 1;
-		animation-fill-mode: backwards;
+	@include media-query($small) {
+		.site-nav {
+			animation-name: fadeIn;
+			animation-duration: 1s;
+			animation-delay: 2s;
+			animation-iteration-count: 1;
+			animation-fill-mode: backwards;
+		}
 	}
 }
 
