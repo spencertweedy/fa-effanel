@@ -19,6 +19,10 @@ h2 {
 	margin-bottom: $gutter;
 }
 
+p + h2 {
+	margin-top: $gutter;
+}
+
 a {
 	color: $color-primary;
 }
@@ -625,6 +629,10 @@ a {
 		line-height: 1.75em;
 		max-width: (540px + ($gutter * 2));
 		margin: ($gutter * 2) auto 0;
+
+		li {
+			margin-bottom: 1em;
+		}
 	}
 }
 
