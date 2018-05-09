@@ -101,10 +101,10 @@
 
         {% form 'contact' %}
           {% if form.posted_successfully? %}
-            <span class="accent-text">Thanks! We will notify you when this product becomes available!</span> <!-- RESPOND TO LATER or RESTOCK LOGIC -->
+            <p class="accent-text">Thanks! We'll notify you!</p>
           {% else %}
-            <span data-buy-later-text {% unless current_variant.available %}class="hide"{% endunless %}>Not ready to buy? Let us <a href="#">remind you</a> in two weeks.</span>
-            <span data-buy-on-restock-text {% if current_variant.available %}class="hide"{% endif %}>Select another variant or let us <a href="#">notify you</a> when back in stock.</span>
+            <p data-buy-later-text {% unless current_variant.available %}class="hide"{% endunless %}>Not ready to buy? Let us <a href="#">remind you</a> in two weeks.</p>
+            <p data-buy-on-restock-text {% if current_variant.available %}class="hide"{% endif %}>Select another variant or let us <a href="#">notify you</a> when this one is back in stock.</p>
           {% endif %}
 
           {% if form.errors %}
@@ -120,13 +120,9 @@
               {% else %}
               <input required="required" type="email" name="contact[email]" placeholder="Your email address…" class="styled-input{% if form.errors contains 'email' %} error{% endif %}" value="{{ contact.fields.email }}" />
               {% endif %}
-
-              {% if current_variant.available %}
-                <input type="hidden" name="contact[body]" value="Please remind me to purchase {{ product.title | escape }} {{ current_variant.title | escape }} in two weeks." />
-              {% else %}
-                <input type="hidden" name="contact[body]" value="Please notify me when {{ product.title | escape }} {{ current_variant.title | escape }} becomes available." />
-              {% endif %} <!-- NEEDS TESTING -->
-              
+              <input type="hidden" name="contact[Notification type]" {% if current_variant.available == true %}value="Reminder (2 weeks)"{% else %}value="Restock"{% endif %} data-notification-type />
+              <input type="hidden" name="contact[Product]" value="{{ product.title | escape }}" data-notification-product />
+              <input type="hidden" name="contact[Variant]" value="{{ current_variant.title | escape }}" data-notification-variant />
               <input class="submit-button" type="submit" value="Send &rarr;" />         
             </div>
           {% endunless %}

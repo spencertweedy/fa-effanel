@@ -21,7 +21,9 @@ theme.Product = (function() {
     productThumbs: '[data-product-single-thumbnail]',
     singleOptionSelector: '[data-single-option-selector]',
     buyLaterText: '[data-buy-later-text]',
-    buyOnRestockText: '[data-buy-on-restock-text]'
+    buyOnRestockText: '[data-buy-on-restock-text]',
+    notificationType: '[data-notification-type]',
+    notificationVariant: '[data-notification-variant]'
   };
 
   /**
@@ -133,13 +135,16 @@ theme.Product = (function() {
       var notifyMeWrapper = $('.notify-me-wrapper');
 
       $('#notify-me-form').addClass('hide');
+      $(selectors.notificationVariant).val(variant.title);
 
       if (variant.available) {
         $(selectors.buyLaterText).removeClass('hide');
         $(selectors.buyOnRestockText).addClass('hide');
+        $(selectors.notificationType).val('Reminder (2 weeks)');
       } else {
         $(selectors.buyOnRestockText).removeClass('hide');
         $(selectors.buyLaterText).addClass('hide');
+        $(selectors.notificationType).val('Restock');
       }
     },
 

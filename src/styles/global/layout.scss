@@ -541,6 +541,10 @@ a {
 				margin-top: $gutter;
 				font-size: 0.875em;
 
+				p {
+					line-height: 1.75em;
+				}
+
 				#notify-me-form {
 					position: relative;
 					margin-top: ($gutter / 2);
