@@ -1,4 +1,14 @@
 /*================ Site Header ================*/
+.template-index {
+	.site-nav {
+		animation-name: fadeIn;
+		animation-duration: 1s;
+		animation-delay: 2s;
+		animation-iteration-count: 1;
+		animation-fill-mode: backwards;
+	}
+}
+
 .site-nav {
 	font-size: 1em;
 	letter-spacing: 0.07em;
@@ -7,11 +17,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	animation-name: fadeIn;
-	animation-duration: 1s;
-	animation-delay: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: backwards;
 
 	a {
 		text-decoration: none;
