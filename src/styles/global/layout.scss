@@ -51,6 +51,7 @@ a {
 	font-weight: $font-weight-bold;
 	color: $color-header-text-lightened;
 	border-radius: 4px;
+	line-height: 1em;
 }
 
 ::selection {
@@ -299,6 +300,7 @@ a {
 
 .intro-section--container {
 	display: flex;
+	align-items: center;
 
 	@include media-query($medium-up) {
 		padding: 0 $gutter;
@@ -327,7 +329,7 @@ a {
 		letter-spacing: -0.036em;
 		font-weight: $font-weight-extrabold;
 		color: $color-header-text;
-		margin-bottom: ($gutter * 2);
+		margin-bottom: $gutter;
 		line-height: 0.9em;
 
 		@include media-query($small) {
@@ -338,7 +340,7 @@ a {
 
 	.intro-section__body {
 		font-size: 1.125em;
-		line-height: 2.27em;
+		line-height: 2em;
 
 		p {
 			margin-bottom: 1.5em;
