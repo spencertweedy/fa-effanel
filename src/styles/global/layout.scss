@@ -40,6 +40,19 @@ a {
 	font-weight: $font-weight-bold;
 }
 
+.btn {
+	padding: ($gutter / 2);
+	background: $color-primary;
+	outline: none;
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: 0.125em;
+	font-size: 0.8125em;
+	font-weight: $font-weight-bold;
+	color: $color-header-text-lightened;
+	border-radius: 4px;
+}
+
 ::selection {
 	background: $color-primary;
 	color: $color-body;
@@ -330,8 +343,21 @@ a {
 
 /*==== Variant grid section styles ====*/
 
-.variant-grid--container {
+.variant-grid-container {
 	text-align: center;
+
+	@include media-query($medium-up) {
+		margin-top: -$gutter;
+		margin-left: -$gutter;
+		display: flex;
+		flex-wrap: wrap;
+
+		.variant-grid__item {
+			padding-top: $gutter;
+			padding-left: $gutter;
+			width: percentage(1 / 3);
+		}
+	}
 
 	a {
 		text-decoration: none;
@@ -586,7 +612,7 @@ a {
 /*==== Footer section styles ====*/
 
 footer {
-	margin-bottom: ($gutter * 3);
+	margin: ($gutter * 3) 0;
 }
 
 .footer--content {

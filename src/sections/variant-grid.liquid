@@ -5,10 +5,10 @@
   {%- assign onboarding_title = 'homepage.onboarding.product_title' | t -%}
 {% endif %}
 
-<div class="variant-grid--container grid">
+<div class="variant-grid-container">
 {% for variant in product.variants %}
   {% if variant.title contains section.settings.variant_spread_filter %}
-  <div class="grid__item medium-up--one-third">
+  <div class="variant-grid__item">
       <a href="{{ variant.url }}">
 
       {% if variant.image != blank %}
@@ -22,7 +22,7 @@
 {% else %}
 
   {% for i in (1..6) %}
-  <div class="grid__item medium-up--one-third">
+  <div class="variant-grid__item">
     <a href="#">
       {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
       {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg placeholder-svg--small' }}
