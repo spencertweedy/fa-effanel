@@ -25,9 +25,9 @@
       {% endif %}
     </header>
 
-    <div class="grid">
+    <div class="collection-container-grid">
       {% for product in collection.products %}
-        <div class="collection__item grid__item medium-up--one-third">
+        <div class="collection__item">
           {% if product.featured_image != blank %}
             <a href="{{ product.url | within: collection }}">
               {{ product.featured_image.src | img_url: '480x480' | img_tag: product.featured_image.alt }}
