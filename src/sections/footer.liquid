@@ -94,7 +94,7 @@
       {% endif %}
     {% endif %}
     {% if section.settings.show_address %}
-      {{ shop.address.summary }}
+      {{ shop.address.street }}, {{ shop.address.city }}, {{ shop.address.province_code }}, {{ shop.address.zip }}
     {% endif %}
     {% if section.settings.show_email or section.settings.show_phone or section.settings.show_address %}<br />{% endif %}
     {% if section.settings.bye-text != blank %}{{ section.settings.bye-text }} &bull; {% endif %}&copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}
