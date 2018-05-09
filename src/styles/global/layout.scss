@@ -345,6 +345,7 @@ a {
 
 .variant-grid-container {
 	text-align: center;
+	margin-top: -$gutter;
 
 	@include media-query($medium-up) {
 		margin-top: -$gutter;
@@ -357,6 +358,10 @@ a {
 			padding-left: $gutter;
 			width: percentage(1 / 3);
 		}
+	}
+
+	.variant-grid__item {
+		padding-top: $gutter
 	}
 
 	a {
