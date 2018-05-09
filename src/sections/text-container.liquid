@@ -3,6 +3,10 @@
     color: {{ section.settings.text_color }};
   }
 
+  .text-container--container a {
+    color: {{ section.settings.text_color }};
+  }
+
   {% if section.settings.background_image != blank %}
   .text-container--container {
     background: url({{ section.settings.background_image | img_url: '1200x' }});
