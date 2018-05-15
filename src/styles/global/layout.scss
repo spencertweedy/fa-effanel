@@ -79,6 +79,25 @@ a {
 	}
 }
 
+/*==== Contact page template styles ====*/
+
+.contact-page {
+	label {
+		margin-bottom: 0.25em;
+		display: block;
+	}
+
+	input[type="text"], input[type="email"], textarea {
+		width: 100%;
+		border: 2px solid $color-header-text-sortalightened;
+		outline: none;
+		padding: ($gutter / 2);
+		border-radius: 4px;
+		font-family: inherit;
+		margin-bottom: ($gutter / 2);
+	}
+}
+
 /*==== Collection template styles ====*/
 
 .collection-container {
