@@ -138,6 +138,12 @@
         "id": "cart_show_vendors",
         "label": "Show product vendor names",
         "default": true
+      },
+      {
+        "type": "text",
+        "id": "cart_notice",
+        "label": "Cart notice text",
+        "placeholder": "We are closed for the holidays and will resume order fulfillment on January 1."
       }
     ]
   },

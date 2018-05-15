@@ -263,6 +263,11 @@ a {
 				font-size: 1.0625em;
 			}
 
+			.cart-notice {
+				color: $color-primary;
+				font-weight: $font-weight-bold;
+			}
+
 			textarea[name="note"] {
 				display: block;
 				border: 2px solid $color-body-text;
@@ -606,7 +611,7 @@ a {
 			}
 
 			.product-info-extras {
-				margin-top: $gutter;
+				margin-top: ($gutter / 2);
 				font-size: 0.875em;
 
 				p {

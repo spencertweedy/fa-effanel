@@ -98,6 +98,7 @@
         {% if cart.total_discounts > 0 %}
           <div>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</div>
         {% endif %}
+        {% if settings.cart_notice != blank %}<div class="cart-notice">{{ settings.cart_notice }}</div>{% endif %}
         <div>{{ 'cart.general.shipping_at_checkout' | t }}</div>
 
         {% if settings.cart_notes_enable %}
