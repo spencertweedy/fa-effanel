@@ -96,37 +96,46 @@
         </form>
       </div>
 
-      <div class="notify-me-wrapper">
+      <div class="product-info-extras">
+      	{% if section.settings.button_message != blank %}
+      	<div class="button-message">
+	    	{{ section.settings.button_message }}
+	    </div>
+	    {% endif %}
+
         <!-- Connected to event listener in product.js -->
+        {% if section.settings.show_reminder == true %}
+        <div class="notify-me-wrapper">
+	        {% form 'contact' %}
+	          {% if form.posted_successfully? %}
+	            <p class="accent-text">Thanks! We'll notify you!</p>
+	          {% else %}
+	            <p data-buy-later-text {% unless current_variant.available %}class="hide"{% endunless %}><a href="#">Remind me later</a></p>
+	            <p data-buy-on-restock-text {% if current_variant.available %}class="hide"{% endif %}>Select another variant or let us <a href="#">notify you</a> when this one is back in stock.</p>
+	          {% endif %}
 
-        {% form 'contact' %}
-          {% if form.posted_successfully? %}
-            <p class="accent-text">Thanks! We'll notify you!</p>
-          {% else %}
-            <p data-buy-later-text {% unless current_variant.available %}class="hide"{% endunless %}>Not ready to buy? Let us <a href="#">remind you</a> in two weeks.</p>
-            <p data-buy-on-restock-text {% if current_variant.available %}class="hide"{% endif %}>Select another variant or let us <a href="#">notify you</a> when this one is back in stock.</p>
-          {% endif %}
+	          {% if form.errors %}
+	            <div class="error feedback accent-text">
+	              Please provide a valid email address.
+	            </div>
+	          {% endif %}
 
-          {% if form.errors %}
-            <div class="error feedback accent-text">
-              Please provide a valid email address.
-            </div>
-          {% endif %}
-
-          {% unless form.posted_successfully? %}
-            <div id="notify-me-form" class="clearfix" style="display:none">
-              {% if customer %}
-              <input type="hidden" name="contact[email]" value="{{ customer.email }}" />
-              {% else %}
-              <input required="required" type="email" name="contact[email]" placeholder="Your email address…" class="styled-input{% if form.errors contains 'email' %} error{% endif %}" value="{{ contact.fields.email }}" />
-              {% endif %}
-              <input type="hidden" name="contact[Notification type]" {% if current_variant.available == true %}value="Reminder (2 weeks)"{% else %}value="Restock"{% endif %} data-notification-type />
-              <input type="hidden" name="contact[Product]" value="{{ product.title | escape }}" data-notification-product />
-              <input type="hidden" name="contact[Variant]" value="{{ current_variant.title | escape }}" data-notification-variant />
-              <input class="submit-button" type="submit" value="Send &rarr;" />         
-            </div>
-          {% endunless %}
-        {% endform %}
+	          {% unless form.posted_successfully? %}
+	            <div id="notify-me-form" class="clearfix" style="display:none">
+	              {% if customer %}
+	              <input type="hidden" name="contact[email]" value="{{ customer.email }}" />
+	              {% else %}
+	              <input required="required" type="email" name="contact[email]" placeholder="Your email address…" class="styled-input{% if form.errors contains 'email' %} error{% endif %}" value="{{ contact.fields.email }}" />
+	              {% endif %}
+	              <input type="hidden" name="contact[Notification type]" {% if current_variant.available == true %}value="Reminder (2 weeks)"{% else %}value="Restock"{% endif %} data-notification-type />
+	              <input type="hidden" name="contact[Product]" value="{{ product.title | escape }}" data-notification-product />
+	              <input type="hidden" name="contact[Variant]" value="{{ current_variant.title | escape }}" data-notification-variant />
+	              <input class="submit-button" type="submit" value="Send &rarr;" />         
+	            </div>
+	          {% endunless %}
+	        {% endform %}
+	    </div>
+	    {% endif %}
       </div>
     </div>
   </div>
@@ -151,6 +160,18 @@
         "id": "show_vendors",
         "label": "Show product vendor names",
         "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_reminder",
+        "label": "Show remind-me-later buttons",
+        "default": true
+      },
+      {
+      	"type": "text",
+      	"id": "button_message",
+      	"label": "Custom message",
+      	"info": "To be displayed beneath 'add to cart' button"
       }
     ]
   }
